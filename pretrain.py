@@ -129,6 +129,7 @@ def main():
     model_list = [model, model_decoder]
     optimizer = optim.Adam([{"params":model.parameters()},{"params":model_decoder.parameters()}], lr=args.lr, weight_decay=args.decay)
 
+
     for epoch in range(1, args.epochs + 1):
         print('====epoch',epoch)
         train(model_list, loader, optimizer, device)
